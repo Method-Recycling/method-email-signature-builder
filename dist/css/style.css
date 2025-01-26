@@ -1,0 +1,511 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol" !important;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700 !important;
+}
+
+body,
+p,
+field,
+field-body,
+radio,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+.heading {
+  text-transform: none !important;
+}
+
+.message,
+.message.is-dark,
+.message.is-dark .message-body,
+.message-body {
+  color: #000000;
+}
+
+.field.has-addons .control:first-child:not(:only-child) .button,
+.field.has-addons .control:first-child:not(:only-child) .input,
+.field.has-addons .control:first-child:not(:only-child) .select select {
+  padding-top: 13px;
+  padding-bottom: 12px;
+}
+
+/* Add these styles for social icons */
+.social_links {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Neumorphic Base Styles */
+:root {
+  --background: #e6e9ef;
+  --text-primary: #2d3436;
+  --neu-shadow-dark: #babecc;
+  --neu-shadow-light: #ffffff;
+  --accent-color: #3273dc;
+}
+
+body {
+  background-color: #F5F7FA !important; /* This matches the blue-grey shade */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/* Neumorphic Card Styles */
+.neu-card {
+  border-radius: 20px;
+  background: var(--background);
+  box-shadow: 8px 8px 16px var(--neu-shadow-dark),
+              -8px -8px 16px var(--neu-shadow-light);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.neu-card-inset {
+  border-radius: 15px;
+  background: var(--background);
+  box-shadow: inset 5px 5px 10px var(--neu-shadow-dark),
+              inset -5px -5px 10px var(--neu-shadow-light);
+  padding: 20px;
+}
+
+/* Preview Sections */
+.preview-section {
+  margin-bottom: 30px;
+}
+
+.preview-section .title {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* Message (preview container) styling */
+.message {
+  border: 1px solid #dbdbdb !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+.message.is-dark {
+  background-color: transparent !important;
+}
+
+.message-body {
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 1.25rem !important;
+}
+
+/* Code Preview */
+.message pre {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+.message pre code {
+  padding: 0 !important;
+  background-color: transparent !important;
+  font-family: 'Fira Code', monospace !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+/* Neumorphic Buttons */
+.button.is-neu {
+  border: none;
+  border-radius: 12px;
+  background: var(--background);
+  box-shadow: 5px 5px 10px var(--neu-shadow-dark),
+              -5px -5px 10px var(--neu-shadow-light);
+  transition: all 0.2s ease;
+
+}
+
+.button.is-neu:hover {
+  box-shadow: 3px 3px 6px var(--neu-shadow-dark),
+              -3px -3px 6px var(--neu-shadow-light);
+  transform: translateY(1px);
+}
+
+.button.is-neu:active {
+  box-shadow: inset 2px 2px 5px var(--neu-shadow-dark),
+              inset -2px -2px 5px var(--neu-shadow-light);
+}
+
+/* Add these button states */
+.button.is-neu.is-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.button.is-neu.is-primary:hover {
+  background: #2366d1;
+  color: white;
+  transform: translateY(2px);
+}
+
+.button.is-neu.is-primary.copied {
+  background: #48c774;
+  color: white;
+}
+
+.button.is-neu.is-primary.copied:hover {
+  background: #3ec46d;
+}
+
+/* Transition for smooth state changes */
+.button.is-neu {
+  transition: all 0.3s ease;
+}
+
+/* Gmail icon spacing */
+.button .icon + .icon {
+  margin-left: 0.25em;
+}
+
+/* Additional Grid Classes */
+.span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .span-2 {
+    grid-column: span 1;
+  }
+}
+
+/* Header Section */
+.header-section {
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(to right, var(--surface), var(--surface-hover));
+}
+
+/* Card Transitions */
+.card {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger card animations */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+}
+
+/* Input Field Styles */
+.input,
+select.input,
+textarea.input {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 45px !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  border: 1.5px solid lightgrey !important;
+  outline: none !important;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  box-shadow: 0px 0px 20px -18px !important;
+  background-color: white !important;
+  font-size: 14px !important;
+}
+
+/* Placeholder Styles */
+.input::placeholder,
+select.input::placeholder,
+textarea.input::placeholder {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-size: 12px !important;
+  color: #888 !important;
+  opacity: 0.8 !important;
+}
+
+/* For Firefox */
+.input::-moz-placeholder,
+select.input::-moz-placeholder,
+textarea.input::-moz-placeholder {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-size: 12px !important;
+  color: #888 !important;
+  opacity: 0.8 !important;
+}
+
+/* For Edge */
+.input::-ms-input-placeholder,
+select.input::-ms-input-placeholder,
+textarea.input::-ms-input-placeholder {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-size: 12px !important;
+  color: #888 !important;
+  opacity: 0.8 !important;
+}
+
+/* For Chrome, Safari, Edge */
+.input::-webkit-input-placeholder,
+select.input::-webkit-input-placeholder,
+textarea.input::-webkit-input-placeholder {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-size: 12px !important;
+  color: #888 !important;
+  opacity: 0.8 !important;
+}
+
+.input:hover,
+select.input:hover,
+textarea.input:hover {
+  border: 2px solid lightgrey !important;
+  box-shadow: 0px 0px 20px -17px !important;
+}
+
+.input:active,
+select.input:active,
+textarea.input:active {
+  transform: scale(0.99) !important;
+}
+
+.input:focus,
+select.input:focus,
+textarea.input:focus {
+  border: 2px solid grey !important;
+  box-shadow: 0px 0px 20px -17px !important;
+}
+
+/* Adjust the select dropdown icon position */
+.select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #666 !important;
+  right: 1.125em !important;
+  z-index: 4 !important;
+}
+
+/* Adjust icon positioning in input fields with icons */
+.has-icons-left .input {
+  padding-left: 2.5em !important;
+}
+
+.has-icons-left .icon.is-left {
+  height: 45px !important;
+  padding: 0 0.5em !important;
+}
+
+/* Disabled state */
+.input:disabled,
+select.input:disabled,
+textarea.input:disabled {
+  background-color: #f5f5f5 !important;
+  border-color: #dbdbdb !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+}
+
+/* Checkbox container adjustments */
+.checkbox {
+  padding: 12px !important;
+  margin-right: 8px !important;
+}
+
+/* Field spacing */
+.field:not(:last-child) {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Label styling */
+.label {
+  color: #363636 !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Control container adjustments */
+.control.is-expanded {
+  flex-grow: 1 !important;
+}
+
+/* Adjust field addons spacing */
+.field.has-addons .control:first-child:not(:only-child) .input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.field.has-addons .control:last-child:not(:only-child) .input {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Custom Button Styles */
+.custom-button {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 10em !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 0.8em 1.6em !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease-in-out !important;
+  border: 1px solid black !important;
+  box-shadow: 0 0 0 0 black !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  width: auto !important;
+  min-width: 140px !important;
+}
+
+.custom-button:hover {
+  transform: translateY(-4px) translateX(-2px) !important;
+  box-shadow: 2px 5px 0 0 black !important;
+}
+
+.custom-button:active {
+  transform: translateY(2px) translateX(1px) !important;
+  box-shadow: 0 0 0 0 black !important;
+}
+
+/* Button variants */
+.custom-button.is-info {
+  background-color: #209cee !important;
+  color: white !important;
+  border-color: #106a9e !important;
+}
+
+.custom-button.is-info:hover {
+  box-shadow: 2px 5px 0 0 #106a9e !important;
+}
+
+/* Copied state */
+.custom-button.copied {
+  background-color: #48c774 !important;
+  color: white !important;
+  border-color: #257c46 !important;
+}
+
+.custom-button.copied:hover {
+  box-shadow: 2px 5px 0 0 #257c46 !important;
+}
+
+/* Icon adjustments */
+.custom-button .icon {
+  margin-right: 8px !important;
+}
+
+.custom-button .icon,
+.custom-button .icon i {
+  color: inherit !important;
+}
+
+/* Gmail icon spacing */
+.button .icon + .icon {
+  margin-left: 0.25em !important;
+}
+
+/* Add this to your existing CSS */
+.divider-wrapper {
+  position: relative;
+}
+
+.divider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid #dbdbdb;
+  transform: translateX(-50%);
+}
+
+/* Heading styles for sections */
+.column > .title {
+  font-size: 1.25rem !important; /* Reduced from default size */
+  margin-bottom: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #363636 !important;
+}
+
+/* If you need to adjust specific headings differently */
+.preview-section .title {
+  font-size: 1.25rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Logo styling */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.method-logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Adjust main heading spacing to accommodate logo */
+.heading {
+  padding-top: 40px;
+}
+
+/* Main heading style */
+.heading h1.title {
+  font-size: 2rem !important; /* Reduced from is-size-1 */
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  color: #363636 !important;
+}
+
+/* Remove any white backgrounds from sections if present */
+.section {
+  background-color: transparent;
+}
+
+.field.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.field .help {
+  font-size: 0.75rem !important;
+  margin-top: 0.25rem !important;
+  color: #666 !important;
+}

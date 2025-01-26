@@ -1,0 +1,421 @@
+<section class="section">
+  <div class="container">
+    <div class="heading">
+      <h1 class="title is-size-1">Generate your Method email signature</h1>
+      <div class="content is-size-7 has-text-weight-medium">
+        <ul>
+          <li>Fill out all the fields below that are applicable</li>
+          <li>Required sections are marked with a '<b>*</b>'</li>
+          <li>You can enable and disable certain areas of the signature by clicking on the checkbox for that line</li>
+          <li>You'll see the Preview box update as you go</li>
+          <li>Once finished, press the "Copy Signature" button to automaticall select and copy your signature</li>
+          <li>Paste the newly created signature into your Gmail signature window</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <!-- LEFT COLUMN -->
+      <div class="column">
+        <h3 class="title">Your information</h3>
+        <!-- START FORM -->
+        <form id="form">
+          <!-- NAME -->
+          <div class="field">
+            <label class="label" for="name">Name*</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control is-expanded has-icons-left">
+                <input id="name" class="input" placeholder="First & Last Name" required>
+                <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+              </p>
+            </div>
+          </div>
+
+          <!-- PERSONAL DETAILS -->
+          <div class="field is-grouped">
+            <div class="field mr-4">
+              <label class="label" for="checkPronouns">Pronouns</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Show pronouns">
+                    <input id="checkPronouns" type="checkbox">
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input id="pronouns" class="input" placeholder="she/her, he/him, ia, etc." disabled>
+                  <span class="icon is-small is-left"><i class="fas fa-mars-and-venus-burst"></i></span>
+                </p>
+              </div>
+            </div>
+            <!-- <div class="field">
+              <label class="label" for="checkQuals">Qualifications</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Show qualifications">
+                    <input id="checkQuals" type="checkbox">
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input id="quals" class="input" placeholder="MTEM Melb, PhD VUW" disabled>
+                  <span class="icon is-small is-left"><i class="fas fa-graduation-cap"></i></span>
+                </p>
+              </div>
+            </div> -->
+            <div class="field">
+              <label class="label" for="checkIwi">Iwi</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Display Iwi">
+                    <input id="checkIwi" type="checkbox">
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input id="iwi" class="input" placeholder="Iwi/hapu" disabled>
+                  <span class="icon is-small is-left"><i class="fas fa-people-group"></i></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- QUALS -->
+          <div style="margin-bottom: 16px;">
+            <label class="label">Qualifications</label>
+            <button class="button js-modal-trigger" data-target="quals-modal">Open Qualifications</button>
+          </div>
+
+          <!-- JOB AND DEPARTMENT -->
+          <div class="field">
+            <label class="label" for="jobtitle">Position*</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control is-expanded has-icons-left">
+                <input id="jobtitle" class="input" placeholder="This is what I do" required>
+                <span class="icon is-small is-left"><i class="fas fa-id-badge"></i></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label" for="department">Job line 2</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Use 2nd job line">
+                  <input id="check2ndJob" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded has-icons-left">
+                <input id="department" class="input" placeholder="This is my team" disabled>
+                <span class="icon is-small is-left"><i class="fas fa-user-group"></i></span>
+              </p>
+            </div>
+          </div>
+
+          <!-- CONTACT NUMBERS -->
+          <div class="field is-grouped">
+            <div class="field mr-4">
+              <label class="label" for="checkPhone">Mobile</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Show Mobile number">
+                    <input id="checkPhone" type="checkbox" checked>
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input type="tel" id="phone" class="input" placeholder="+64 xx xxx xxxx">
+                  <span class="icon is-small is-left"><i class="fas fa-mobile"></i></span>
+                </p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label" for="checkDDI">DDI</label>
+              <div class="field has-addons has-addons-centered">
+                <p class="control">
+                  <label class="button" title="Show DDI number">
+                    <input id="checkDDI" type="checkbox">
+                  </label>
+                </p>
+                <p class="control is-expanded has-icons-left">
+                  <input type="tel" id="ddi" class="input" placeholder="+64 4 xxx xxxx" disabled>
+                  <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TEAMS INFO -->
+          <div class="field">
+            <label class="label" for="checkTeams">Teams</label>
+            <div class="field">
+              <p class="control">
+                <label class="checkbox" title="Show a 'Call me on Teams' link">
+                  <input id="checkTeams" type="checkbox" checked>
+                  Show a link to directly call you through Teams
+                </label>
+              </p>
+            </div>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="field">
+            <label class="label" for="email">Email*</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control is-expanded has-icons-left">
+                <input type="email" id="email" class="input" placeholder="first.lastname@wandw.ac.nz" required>
+                <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+              </p>
+            </div>
+          </div>
+
+          <!-- ADDITIONAL INFO -->
+          <div class="field">
+            <label class="label" for="checkAdditional">Additional Info</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Enable Additional Information">
+                  <input id="checkAdditional" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded">
+                <input id="additional" class="input" placeholder="Example: Campus Locations, Hours: 9am–5pm, Mon–Fri" disabled>
+                <span class="help">
+                  You can make text bold by typing &lt;b&gt; before what you want bold, and &lt;/b&gt; after it.<br>
+                  You can make text italic by typing &lt;i&gt; before what you want italicised, and &lt;/i&gt; after it.<br>
+                  <b>For example:</b> &lt;b&gt;Campus Locations:&lt;/b&gt; Whitireia Porirua: Mon–Wed, Te Kāhui Auaha: Thu, Petone: Fri.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <!-- BANNER -->
+          <div class="field">
+            <label class="label" for="checkImage">Banner</label>
+            <div class="field has-addons has-addons-centered">
+              <div class="control is-expanded has-icons-left">
+                <div class="select">
+                  <select id="image" class="input" name="Banners" placeholder="None" title="Use campaign banners">
+                    <option value="None" selected>None - click to choose</option>
+                    <option value="tri1-25">Trimester 1 2025</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fas fa-image"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="divider">Team Specific</div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="field mr-4">
+              <label class="label" for="checkICT">ICT Services</label>
+              <div class="field">
+                <p class="control">
+                  <label class="checkbox" title="Enable ICT Services Banner">
+                    <input id="checkICT" type="checkbox">
+                    For ICT Services use only
+                  </label>
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- END FORM -->
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="column">
+        <h3 class="title">Live Preview</h3>
+        <!-- START PREVIEW -->
+        <article class="message is-dark">
+          <div class="message-body" id="signature_container">
+            <table cellspacing="0" id="signature" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule:exactly;" width="100%">
+              <tbody>
+                <!-- Person and job lines -->
+                <tr class="row-person">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top; padding: 0px 0px 10px 0px;">
+                    <b><span class="name" id="editName" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 11pt; font-feature-settings: 'kern' 1, 'liga' 1;">Firstname Lastname</span></b><span id="editPronouns" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-style: italic; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333"></span><span id="editQuals" style="font-family: Aptos, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #666666;"></span><br>
+                    <!-- Iwi/Hapu -->
+                    <span id="editIwi" style="font-family: Aptos, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
+                    <!-- Job Titles -->
+                    <span class="jobtitle" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"><b>Job title</b></span><span id="jobSep"></span><span class="department" id="editJobline" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
+                  </td>
+                </tr>
+                <!-- Contact details -->
+                <tr class="row-call">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top;">
+                    <div id="deetsWrap" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;">
+                      <span id="mobileLabel"><b>Mob: </b></span><span id="mobileWrap" class="phone">+64 2x xxx xxxx</span>
+                      <span id="numberSplit" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;">&ensp;|&ensp;</span>
+                      <span id="ddiLabel"><b></b></span><span id="ddiWrap" class="ddi"></span>
+                      <span id="teamsSplit" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
+                      <a href="#" id="teamsWrap" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #000000; text-decoration-color: #000000;">Call&nbsp;me&nbsp;on&nbsp;Teams</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="row-email">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top; padding: 0px 0px 10px 0px;">
+                    <a class="email" href="mailto:first.last@wandw.ac.nz" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; text-decoration-line: underline; color: #000000; text-decoration-color: #000000;">first.last@wandw.ac.nz</a>
+                  </td>
+                </tr>
+                <!-- Additional info -->
+                <tr class="row-info">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top;">
+                    <div class="additional" id="editAdditional" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; padding: 0px 0px 10px 0px;"></div>
+                  </td>
+                </tr>
+                <!-- ITC Services -->
+                <tr class="row-servicenow">
+                  <!-- <td id="editServiceNow" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top; padding: 0px 0px 18px 0px;">
+                    <span class="serviceNow" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; background-color: #DEDEDE; padding: 6px;"><b>ICT Service Centre</b>&ensp;|&ensp;<b>Ph: </b>+64 4 830 3150&ensp;|&ensp;<a href="https://w2ss.service-now.com" style="text-decoration-line: underline; color: #000000; text-decoration-color: #000000;"><b>w2ss.service-now.com</b></a></span>
+                  </td> -->
+                </tr>
+                <!-- Institution names & address -->
+                <tr class="row-institutes">
+                  <td style="padding: 0px 0px 10px 0px;">
+                    <table cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 450px;">
+                      <tr>
+                        <!-- WW logo -->
+                        <td style="max-width: 292px; vertical-align: top; padding: 10px 0px 10px 0px;" width="292px">
+                          <img alt="Method Recycling logo" class="wwLogo" style="object-fit: contain; object-position: 0px center; width: 292px; height: 64px; max-width: 292px; max-height: 64px;" width="292px" height="64px" src="https://lh3.googleusercontent.com/d/1ZdCNc4t1DaCU-pzUf8gTtCeZrQ-1ACmT">
+                        </td>
+                        <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; line-height: 1.25; font-feature-settings: 'kern' 1, 'liga' 1; padding: 5px 0px 10px 10px; vertical-align: middle; color: #333333">
+                          <span style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; line-height: 1.25; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333;">
+                            Te Kura Matatini o Whitireia<br>
+                            Te Whare Wānanga o te Awakairangi<br>
+                            0800 STUDY WW (0800 788 399)</span><br>
+                          <b><a href="https://www.whitireiaweltec.ac.nz" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: middle; color: #000000; text-decoration-color: #000000; ">whitireiaweltec.ac.nz</a></b>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Locations -->
+                <tr class="row-locations">
+                  <td>
+                    <div class="locations" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333; text-decoration-color: #333333;">
+                      Visit us at:
+                      <a style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'Aptos, Helvetica Neue, Arial' 1; color: #333333; text-decoration-color: #333333;" href="https://goo.gl/maps/vshfTAEsFWXNFwf37">Porirua</a> |
+                      <a style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333; text-decoration-color: #333333;" href="https://goo.gl/maps/BsHbFEUECut61pRB7">Petone</a> |
+                      <a style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333; text-decoration-color: #333333;" href="https://goo.gl/maps/VMn2yB8fpP5UaQxh7">Te&nbsp;Auaha</a> |
+                      <a style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333; text-decoration-color: #333333;" href="https://goo.gl/maps/dFtsDwENHMY3kGuF9">Construction</a>
+                    </div>
+                  </td>
+                </tr>
+                <!-- Banner -->
+                <tr>
+                  <td>
+                    <div id="imageWrap" style="padding: 0px 0px 0px 0px;"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <!-- END OF PREVIEW -->
+
+        <!-- BUTTONS -->
+        <!-- <h3 class="title">Copy Signature</h3>
+        <p>Press the button below to automatically highlight and copy your signature:</p> -->
+        <div class="controls">
+          <button class="button is-primary" data-select data-signature="signature">
+            <span class="icon is-small"><i class="fas fa-clipboard"></i></span>
+            <span>Copy signature</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- THANKS SVYAT AND JEREMY THOMAS -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>This signature maker is kindly forked from Svyat. You can find the original <a href="https://codepen.io/svyatoff/pen/wdRzWw">here</a>.</p>
+    <p>This generator was built in CodePen, using <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+    </p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="quals-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <button class="modal-close is-large" aria-label="close"></button>
+    <header class="modal-card-head">
+      <p class="modal-card-title">Qualifications</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="content is-size-7 has-text-weight-medium">
+        <bl>
+          <li>It is standard practice to only list the top two qualifications awarded</li>
+          <li>You must use proper abbreviations, i.e. PGDip, never PostGrad Dip</li>
+          <li>It is best practice to not include the subject of the qualification</li>
+          <li>Avoid redundancy. You wouldn't list both BCom and MCom if awarded from the same institute</li>
+          <li>This text will be auto-formatted to adhere to best practice. Please do not adjust after creating your signature</li>
+        </bl>
+      </div>
+      <form action="" class="form-container">
+
+        <div class="field">
+          <label class="label" for="qual1">Qualification one</label>
+          <div class="field has-addons has-addons-centered">
+            <p class="control is-expanded has-icons-left">
+              <input id="qual1" class="input" placeholder="Example: PhD, MSE, etc." required>
+              <span class="icon is-small is-left"><i class="fas fa-graduation-cap"></i></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="award1">Awarding institute</label>
+          <div class="field has-addons has-addons-centered">
+            <p class="control is-expanded has-icons-left">
+              <input id="award1" class="input" placeholder="The institute that awarded you this qualification" required>
+              <span class="icon is-small is-left"><i class="fas fa-school"></i></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="qual2">Qualification two</label>
+          <div class="field has-addons has-addons-centered">
+            <p class="control is-expanded has-icons-left">
+              <input id="qual2" class="input" placeholder="Example: PhD, MSE, etc.">
+              <span class="icon is-small is-left"><i class="fas fa-graduation-cap"></i></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="award2">Awarding institute</label>
+          <div class="field has-addons has-addons-centered">
+            <p class="control is-expanded has-icons-left">
+              <input id="award2" class="input" placeholder="The institute that awarded you this qualification">
+              <span class="icon is-small is-left"><i class="fas fa-school"></i></span>
+            </p>
+          </div>
+        </div>
+
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <div class="buttons">
+        <button id="qualsSave" class="button is-primary" data-select data-signature="signature">
+          <span class="icon is-small"><i class="fas fa-save"></i></span>
+          <span>Save</span>
+        </button>
+        <button id="qualsClear" class="button is-danger is-outlined">
+          <span class="icon is-small"><i class="fas fa-cancel"></i></span>
+          <span>Clear</span>
+        </button>
+        <button class="button">Cancel</button>
+      </div>
+    </footer>
+  </div>
+</div>

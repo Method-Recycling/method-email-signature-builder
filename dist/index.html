@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+<head>
+  <meta charset="UTF-8">
+  <title>Method Email Signature Generator</title>
+  <link href="./css/bulma-divider.min.css" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
+<link rel='stylesheet' href='./css/style.css'>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section class="section">
+  <div class="container">
+    <!-- Add logo container -->
+    <div class="logo-container">
+      <img src="../src/assets/logo.png" alt="Method Logo" class="method-logo">
+    </div>
+    
+    <div class="heading">
+      <h1 class="title">Generate your Method email signature</h1>
+      <div class="content is-size-7 has-text-weight-medium">
+        <ul>
+          <li>Fill out all the fields below that are applicable</li>
+          <li>Required sections are marked with a '<b>*</b>'</li>
+          <li>You can enable and disable certain areas of the signature by clicking on the checkbox for that line</li>
+          <li>You'll see the Preview box update as you go</li>
+          <li>Once finished, press the "Copy Signature" button to automaticall select and copy your signature</li>
+          <li>Paste the newly created signature into your Gmail signature window</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns divider-wrapper">
+      <!-- LEFT COLUMN -->
+      <div class="column">
+        <h3 class="title">Your information</h3>
+        <!-- START FORM -->
+        <form id="form">
+          <!-- NAME AND PRONOUNS ROW -->
+          <div class="columns">
+            <div class="column is-8">
+              <!-- NAME -->
+              <div class="field">
+                <label class="label" for="name">Name*</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control is-expanded has-icons-left">
+                    <input id="name" class="input" placeholder="First & Last Name" required>
+                    <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4">
+              <!-- PRONOUNS -->
+              <div class="field">
+                <label class="label" for="checkPronouns">Pronouns</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control">
+                    <label class="button" title="Show pronouns">
+                      <input id="checkPronouns" type="checkbox">
+                    </label>
+                  </p>
+                  <p class="control is-expanded has-icons-left">
+                    <input id="pronouns" class="input" placeholder="she/her, he/him, ia, etc." disabled>
+                    <span class="icon is-small is-left"><i class="fas fa-mars-and-venus-burst"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- POSITION AND JOB LINE 2 ROW -->
+          <div class="columns">
+            <div class="column is-6">
+              <!-- POSITION -->
+              <div class="field">
+                <label class="label" for="jobtitle">Position*</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control is-expanded has-icons-left">
+                    <input id="jobtitle" class="input" placeholder="This is what I do" required>
+                    <span class="icon is-small is-left"><i class="fas fa-id-badge"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <!-- JOB LINE 2 -->
+              <div class="field">
+                <label class="label" for="department">Job line 2</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control">
+                    <label class="button" title="Use 2nd job line">
+                      <input id="check2ndJob" type="checkbox">
+                    </label>
+                  </p>
+                  <p class="control is-expanded has-icons-left">
+                    <input id="department" class="input" placeholder="This is my team" disabled>
+                    <span class="icon is-small is-left"><i class="fas fa-user-group"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOBILE AND EMAIL ROW -->
+          <div class="columns">
+            <div class="column is-6">
+              <!-- MOBILE -->
+              <div class="field">
+                <label class="label" for="checkPhone">Mobile</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control">
+                    <label class="button" title="Show Mobile number">
+                      <input id="checkPhone" type="checkbox" checked>
+                    </label>
+                  </p>
+                  <p class="control is-expanded has-icons-left">
+                    <input type="tel" id="phone" class="input" placeholder="+64 xx xxx xxxx">
+                    <span class="icon is-small is-left"><i class="fas fa-mobile"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <!-- EMAIL -->
+              <div class="field">
+                <label class="label" for="email">Email*</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control is-expanded has-icons-left">
+                    <input type="email" id="email" class="input" placeholder="yourname@methodrecycling.com" required>
+                    <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TEAMS INFO -->
+          <div class="field">
+            <label class="label" for="checkTeams">Meeting Link</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Show a 'Book a meeting with me' link">
+                  <input id="checkTeams" type="checkbox" checked>
+                </label>
+              </p>
+              <p class="control is-expanded has-icons-left">
+                <input type="url" id="meetingUrl" class="input" placeholder="https://teams.microsoft.com/l/meetup-join/...">
+                <span class="icon is-small is-left"><i class="fas fa-video"></i></span>
+              </p>
+            </div>
+            <p class="help">Add your personal meeting URL from Hubspot</p>
+          </div>
+
+          <!-- ADDITIONAL INFO -->
+          <div class="field">
+            <label class="label" for="checkAdditional">Additional Info</label>
+            <div class="field has-addons has-addons-centered">
+              <p class="control">
+                <label class="button" title="Enable Additional Information">
+                  <input id="checkAdditional" type="checkbox">
+                </label>
+              </p>
+              <p class="control is-expanded">
+                <input id="additional" class="input" placeholder="Example: Work Locations, Hours: 9am–5pm, Mon–Fri" disabled>
+                <span class="help">
+                  You can make text bold by typing &lt;b&gt; before what you want bold, and &lt;/b&gt; after it.<br>
+                  You can make text italic by typing &lt;i&gt; before what you want italicised, and &lt;/i&gt; after it.<br>
+                  <b>For example:</b> &lt;b&gt;Work Locations:&lt;/b&gt; Wellington.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <!-- BANNER -->
+          <div class="field">
+            <label class="label" for="checkImage">Banner</label>
+            <div class="field has-addons has-addons-centered">
+              <div class="control is-expanded has-icons-left">
+                <div class="select">
+                  <select id="image" class="input" name="Banners" title="Use campaign banners">
+                    <option value="tri1-25" selected>Banner 01</option>
+                    <!-- Add more options as needed -->
+                    <option value="None">None - click to choose</option>
+                  </select>
+                </div>
+                <div class="icon is-small is-left">
+                  <i class="fas fa-image"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Add banner link field -->
+            <div class="field mt-2">
+              <div class="control is-expanded has-icons-left">
+                <input type="url" id="bannerLink" class="input" placeholder="https://example.com/campaign">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-link"></i>
+                </span>
+              </div>
+              <p class="help">Add the URL where the banner should link to</p>
+            </div>
+          </div>
+        </form>
+        <!-- END FORM -->
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="column">
+        <h3 class="title">Live Preview</h3>
+        <!-- START PREVIEW -->
+        <article class="message is-dark">
+          <div class="message-body" id="signature_container">
+            <table cellspacing="0" id="signature" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; mso-line-height-rule:exactly;" width="100%">
+              <tbody>
+                <!-- Person and job lines -->
+                <tr class="row-person">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top; padding: 0px 0px 10px 0px;">
+                    <b><span class="name" id="editName" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 11pt; font-feature-settings: 'kern' 1, 'liga' 1;">Firstname Lastname</span></b><span id="editPronouns" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-style: italic; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333"></span><br>
+                    <!-- Job Titles -->
+                    <span class="jobtitle" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"><b>Job title</b></span><span id="jobSep"></span><span class="department" id="editJobline" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
+                  </td>
+                </tr>
+                <!-- Contact details -->
+                <tr class="row-call">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top;">
+                    <div id="deetsWrap" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;">
+                      <span id="mobileLabel"><b>Mob: </b></span><span id="mobileWrap" class="phone">+64 2x xxx xxxx</span>
+                      <span id="numberSplit" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;">&ensp;|&ensp;</span>
+                      <span id="teamsSplit" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
+                      <a href="#" id="teamsWrap" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #000000; text-decoration-color: #000000;">Book&nbsp;a&nbsp;Meeting&nbsp;With&nbsp;Me</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="row-email">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top; padding: 0px 0px 10px 0px;">
+                    <a class="email" href="mailto:yourname@methodrecycling.com" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; text-decoration-line: underline; color: #000000; text-decoration-color: #000000;">yourname@methodrecycling.com</a>
+                  </td>
+                </tr>
+                <!-- Additional info -->
+                <tr class="row-info">
+                  <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top;">
+                    <div class="additional" id="editAdditional" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; padding: 0px 0px 10px 0px;"></div>
+                  </td>
+                </tr>
+                <!-- Institution names & address -->
+                <tr class="row-institutes">
+                  <td style="padding: 0px 0px 10px 0px;">
+                    <table cellspacing="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; max-width: 450px;">
+                      <tr>
+                        <!-- WW logo -->
+                        <td style="max-width: 292px; vertical-align: top; padding: 10px 0px 10px 0px;" width="292px">
+                          <img alt="Method Recycling logo" class="wwLogo" style="object-fit: contain; object-position: 0px center; width: 292px; height: 64px; max-width: 292px; max-height: 64px;" width="292px" height="64px" src="https://lh3.googleusercontent.com/d/1ZdCNc4t1DaCU-pzUf8gTtCeZrQ-1ACmT">
+                        </td>
+                       
+                          <b><a href="https://www.methodrecycling.com" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 9pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: middle; color: #000000; text-decoration-color: #000000; ">methodrecycling.com</a></b>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Banner -->
+                <tr>
+                  <td>
+                    <div id="imageWrap" style="padding: 0px 0px 0px 0px;"></div>
+                  </td>
+                </tr>
+                <!-- Add Social Icons row -->
+                <tr class="row-social">
+                  <td style="padding: 10px 0px 0px 0px;">
+                    <div class="social_links">
+                      <a href="https://www.instagram.com/methodrecycling/" target="_blank">
+                        <img src="../src/assets/instagram.png" alt="Instagram" class="social-icon">
+                      </a>
+                      <a href="https://www.facebook.com/methodrecycling" target="_blank">
+                        <img src="../src/assets/facebook.png" alt="Facebook" class="social-icon">
+                      </a>
+                      <a href="https://www.youtube.com/channel/UC_yUgZz5JCO0VJjMUbk70Kw" target="_blank">
+                        <img src="../src/assets/youtube.png" alt="YouTube" class="social-icon">
+                      </a>
+                      <a href="https://nz.linkedin.com/company/methodrecycling/" target="_blank">
+                        <img src="../src/assets/linkedin.png" alt="LinkedIn" class="social-icon">
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <!-- END OF PREVIEW -->
+
+        <!-- Copy signature button -->
+        <div class="controls mb-5">
+          <button class="custom-button" data-select data-signature="signature">
+            <span class="icon is-small"><i class="fas fa-clipboard"></i></span>
+            <span>Copy signature</span>
+          </button>
+        </div>
+
+        <!-- NEW CODE PREVIEW SECTION -->
+        <h3 class="title">Code Preview</h3>
+        <article class="message is-dark">
+          <div class="message-body">
+            <pre><code id="code_preview" style="white-space: pre-wrap; font-family: monospace; font-size: 12px; max-height: 200px; overflow-y: auto;"></code></pre>
+          </div>
+        </article>
+        
+        <div class="controls">
+          <button class="custom-button" data-select data-signature="signature_container">
+            <span class="icon is-small"><i class="fas fa-code"></i></span>
+            <span>Copy code</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- partial -->
+<script src="./script.js"></script>
+</body>
+</html>
