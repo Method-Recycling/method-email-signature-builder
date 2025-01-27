@@ -142,9 +142,9 @@
         img.height = "170";
         break;
 
-      case "tri1-25":
+      case "Feb-offer-25":
         img.src =
-          "https://lh3.googleusercontent.com/d/1pWiNj4tnai1dTcZRbAu6ueBvjSt1zlNz";
+          "https://lh3.googleusercontent.com/d/1Lz9w6Bv0-zUYVnDFv5_Z9c3iyP0-Q9L2";
         break;
 
       case "None":
