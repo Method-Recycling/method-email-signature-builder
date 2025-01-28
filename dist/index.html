@@ -12,7 +12,6 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
 <link rel='stylesheet' href='./css/style.css'>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -27,12 +26,12 @@
       <h1 class="title">Generate your Method email signature</h1>
       <div class="content is-size-7 has-text-weight-medium">
         <ul>
-          <li>Fill out all the fields below that are applicable</li>
-          <li>Required sections are marked with a '<b>*</b>'</li>
-          <li>You can enable and disable certain areas of the signature by clicking on the checkbox for that line</li>
-          <li>You'll see the Preview box update as you go</li>
-          <li>Once finished, press the "Copy Signature" button to automaticall select and copy your signature</li>
-          <li>Paste the newly created signature into your Gmail signature window</li>
+          <li>Fill out all applicable fields below.</li>
+          <li>Required sections are marked with '*'.</li>
+          <li>Enable or disable signature areas by checking the corresponding boxes.</li>
+          <li>The Preview box updates automatically.</li>
+          <li>When finished, click 'Copy Signature' to select and copy it.</li>
+          <li>Paste the signature into your Gmail signature window.</li>
         </ul>
       </div>
     </div>
@@ -40,7 +39,7 @@
 </section>
 <section class="section">
   <div class="container">
-    <div class="columns divider-wrapper">
+    <div class="columns">
       <!-- LEFT COLUMN -->
       <div class="column">
         <h3 class="title">Your information</h3>
@@ -130,6 +129,21 @@
                   </p>
                 </div>
               </div>
+              <!-- MOBILE 2 -->
+              <div class="field">
+                <label class="label" for="checkPhone2">Mobile 2</label>
+                <div class="field has-addons has-addons-centered">
+                  <p class="control">
+                    <label class="button" title="Show second Mobile number">
+                      <input id="checkPhone2" type="checkbox">
+                    </label>
+                  </p>
+                  <p class="control is-expanded has-icons-left">
+                    <input type="tel" id="phone2" class="input" placeholder="+64 xx xxx xxxx" disabled>
+                    <span class="icon is-small is-left"><i class="fas fa-mobile"></i></span>
+                  </p>
+                </div>
+              </div>
             </div>
             <div class="column is-6">
               <!-- EMAIL -->
@@ -189,25 +203,16 @@
               <div class="control is-expanded has-icons-left">
                 <div class="select">
                   <select id="image" class="input" name="Banners" title="Use campaign banners">
-                    <option value="Feb-offer-25" selected>Feb-offer-25</option>
-                    <!-- Add more options as needed -->
-                    <option value="None">None - click to choose</option>
+                    <option value="None" selected>None - click to choose</option>
+                    <option value="sales-marketing">Campaign signature for anyone that does Sales and Marketing (gmail + hubspot)</option>
+                    <option value="sales-shared">Campaign signature for Sales</option>
+                    <option value="default">Default signature for everyone else</option>
                   </select>
                 </div>
                 <div class="icon is-small is-left">
                   <i class="fas fa-image"></i>
                 </div>
               </div>
-            </div>
-            <!-- Add banner link field -->
-            <div class="field mt-2">
-              <div class="control is-expanded has-icons-left">
-                <input type="url" id="bannerLink" class="input" placeholder="https://example.com/campaign">
-                <span class="icon is-small is-left">
-                  <i class="fas fa-link"></i>
-                </span>
-              </div>
-              <p class="help">Add the URL where the banner should link to</p>
             </div>
           </div>
         </form>
@@ -227,7 +232,7 @@
                   <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top; padding: 0px 0px 10px 0px;">
                     <b><span class="name" id="editName" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 11pt; font-feature-settings: 'kern' 1, 'liga' 1;">Firstname Lastname</span></b><span id="editPronouns" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-style: italic; font-feature-settings: 'kern' 1, 'liga' 1; color: #333333"></span><br>
                     <!-- Job Titles -->
-                    <span class="jobtitle" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"><b>Job title</b></span><span id="jobSep"></span><span class="department" id="editJobline" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
+                    <span class="jobtitle" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"><b>Job title</b></span><span id="jobSep">&nbsp;|&nbsp;</span><span class="department" id="editJobline" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
                   </td>
                 </tr>
                 <!-- Contact details -->
@@ -235,8 +240,8 @@
                   <td style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; vertical-align: top;">
                     <div id="deetsWrap" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;">
                       <span id="mobileLabel"><b>Mob: </b></span><span id="mobileWrap" class="phone">+64 2x xxx xxxx</span>
+                      <span id="mobile2Label"></span><span id="mobile2Wrap" class="phone2"></span>
                       <span id="numberSplit" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;">&ensp;|&ensp;</span>
-                      <span id="teamsSplit" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1;"></span>
                       <a href="#" id="teamsWrap" style="font-family: Aptos, Helvetica Neue, Arial, sans-serif; font-size: 10pt; font-feature-settings: 'kern' 1, 'liga' 1; color: #000000; text-decoration-color: #000000;">Book&nbsp;a&nbsp;Meeting&nbsp;With&nbsp;Me</a>
                     </div>
                   </td>
@@ -302,8 +307,10 @@
         <!-- Copy signature button -->
         <div class="controls mb-5">
           <button class="custom-button" data-select data-signature="signature">
-            <span class="icon is-small"><i class="fas fa-clipboard"></i></span>
-            <span>Copy signature</span>
+            <span class="icon is-small">
+              <img src="images/gmail.svg" alt="Gmail icon" width="16" height="16">
+            </span>
+            <span>Copy Gmail Signature</span>
           </button>
         </div>
 
@@ -317,8 +324,10 @@
         
         <div class="controls">
           <button class="custom-button" data-select data-signature="signature_container">
-            <span class="icon is-small"><i class="fas fa-code"></i></span>
-            <span>Copy code</span>
+            <span class="icon is-small">
+              <img src="images/hubspot.svg" alt="Hubspot icon" width="16" height="16">
+            </span>
+            <span>Copy Hubspot Signature</span>
           </button>
         </div>
       </div>

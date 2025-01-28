@@ -36,7 +36,11 @@
   var bannerWrap = doc.querySelector("#imageWrap");
   var bannerInput = doc.querySelector("#image");
 
-  var bannerLinkInput = doc.querySelector("#bannerLink");
+  // Add new variables for second mobile number
+  var checkPhone2 = doc.querySelector("#checkPhone2");
+  var mobile2Input = doc.querySelector("#phone2");
+  var mobile2Wrap = doc.querySelector("#mobile2Wrap");
+  var mobile2Label = doc.querySelector("#mobile2Label");
 
   for (var i = inputs.length - 1; i >= 0; i--) {
     inputs[i].addEventListener("keyup", updateSignature);
@@ -52,17 +56,17 @@
     }
   });
 
-  checkJobline.addEventListener("click", function () {
-    if (!this.checked) {
-      joblineInput.disabled = true;
-      removeHtmlNodes(joblineWrap);
-      jobSep.innerHTML = "";
+  checkJobline.addEventListener("change", function() {
+    var department = doc.getElementById("department");
+    
+    if (this.checked) {
+      department.disabled = false;
+      jobSep.innerHTML = "&nbsp;|&nbsp;";
     } else {
-      joblineInput.disabled = false;
-      addHtmlNodes(joblineWrap, "Job line 2", "department");
-      if (jobtitle.value) {
-        jobSep.innerHTML = ", ";
-      }
+      department.disabled = true;
+      department.value = "";
+      jobSep.innerHTML = "";
+      removeHtmlNodes(doc.getElementById("editJobline"));
     }
   });
 
@@ -80,22 +84,49 @@
     }
   });
 
-  checkTeams.addEventListener("click", function () {
+  checkPhone2.addEventListener("click", function () {
     if (!this.checked) {
-      removeHtmlNodes(teamsWrap);
-      addContactSplits();
+      mobile2Input.disabled = true;
+      removeHtmlNodes(mobile2Label);
+      removeHtmlNodes(mobile2Wrap);
     } else {
-      teamsWrap.innerHTML = "Book&nbsp;a&nbsp;Meeting&nbsp;With&nbsp;Me";
-      addContactSplits();
+      mobile2Input.disabled = false;
+      mobile2Label.innerHTML = "<b>&nbsp;/&nbsp;</b>";
+      addHtmlNodes(mobile2Wrap, "+64 xx xxx xxxx", "phone2");
     }
+    addContactSplits();
+  });
+
+  checkTeams.addEventListener("click", function () {
+    removeHtmlNodes(teamsWrap);
+    
+    if (this.checked) {
+      teamsWrap.innerHTML = "Book&nbsp;a&nbsp;Meeting&nbsp;With&nbsp;Me";
+    }
+    
+    // Always update splits after change
+    addContactSplits();
   });
 
   function addContactSplits() {
-    if (teamsSplit) {
-      teamsSplit.innerHTML =
-        checkTeams.checked && checkPhone.checked ? " &nbsp;|&nbsp; " : "";
-    }
+    const numberSplit = document.getElementById('numberSplit');
+    const teamsWrap = document.getElementById('teamsWrap');
+    
+    // Show separator if either phone is checked AND teams is visible
+    const showNumberSplit = (checkPhone.checked || checkPhone2.checked) && teamsWrap.innerHTML.trim().length > 0;
+    numberSplit.style.display = showNumberSplit ? 'inline' : 'none';
   }
+
+  // Update event listeners to include second mobile
+  [checkPhone, checkPhone2, checkTeams].forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+      addContactSplits();
+      setTimeout(addContactSplits, 50);
+    });
+  });
+
+  // Initial call to set correct state
+  addContactSplits();
 
   checkAdditional.addEventListener("click", function () {
     if (!this.checked) {
@@ -114,37 +145,20 @@
     img.width = "450";
     img.height = "100";
     
-    link.href = bannerLinkInput.value || "https://www.methodrecycling.com";
-
     switch (bannerInput.value) {
-      case "tri1-2024":
-        img.src =
-          "https://lh3.googleusercontent.com/d/1pWiNj4tnai1dTcZRbAu6ueBvjSt1zlNz";
+      case "sales-marketing":
+        img.src = "https://lh3.googleusercontent.com/d/1Lz9w6Bv0-zUYVnDFv5_Z9c3iyP0-Q9L2";
+        link.href = "https://www.methodrecycling.com/internal-onboarding";
         break;
 
-      case "tri2-2024":
-        img.src =
-          "https://lh3.googleusercontent.com/d/1pWiNj4tnai1dTcZRbAu6ueBvjSt1zlNz";
+      case "sales-shared":
+        img.src = "https://lh3.googleusercontent.com/d/1Lz9w6Bv0-zUYVnDFv5_Z9c3iyP0-Q9L2";
+        link.href = "https://www.methodrecycling.com/internal-onboarding";
         break;
 
-      case "od_2024":
-        img.src =
-          "https://lh3.googleusercontent.com/d/1pWiNj4tnai1dTcZRbAu6ueBvjSt1zlNz";
-        link.href =
-          "https://www.whitireiaweltec.ac.nz/open-day-events-and-evenings-2024/";
-        break;
-
-      case "emerge-24":
-        img.src =
-          "https://www.whitireiaweltec.ac.nz/assets/Events/E_MERGE_EmailSig_450x170px_2024.jpg?vid=5";
-        link.href = "https://teauahaevents.com/emerge";
-        img.width = "450";
-        img.height = "170";
-        break;
-
-      case "Feb-offer-25":
-        img.src =
-          "https://lh3.googleusercontent.com/d/1Lz9w6Bv0-zUYVnDFv5_Z9c3iyP0-Q9L2";
+      case "default":
+        img.src = "https://lh3.googleusercontent.com/d/1t8bcHVKVXtnpCUtWtboFc6LfA4Gqf_Za";
+        link.href = "https://www.methodrecycling.com";
         break;
 
       case "None":
@@ -169,13 +183,6 @@
         bannerWrap.appendChild(link);
         bannerWrap.style.setProperty("margin-top", "10px", "important");
       }
-    }
-  });
-
-  bannerLinkInput.addEventListener("change", function() {
-    var link = bannerWrap.querySelector("a");
-    if (link) {
-      link.href = bannerLinkInput.value || "https://www.methodrecycling.com";
     }
   });
 
