@@ -231,11 +231,11 @@
     switch (id) {
       case "email":
         element.innerHTML = value;
-        element.href = value ? "mailto:" + value : ""; // Sets href to an empty string if value is empty
-        if (checkTeams) {
-          teamsWrap.href = value
-            ? "https://teams.microsoft.com/l/call/0/0?users=$" + value
-            : "#"; // Fallback to "#" if no email
+        element.href = value ? "mailto:" + value : "";
+        break;
+      case "meetingUrl":
+        if (checkTeams && checkTeams.checked) {
+          teamsWrap.href = value || "#";
         }
         break;
       case "pronouns":
@@ -469,5 +469,8 @@
   document.addEventListener('DOMContentLoaded', () => {
     updateCodePreview();
   });
+
+  // Add this with other input listeners
+  document.getElementById('meetingUrl').addEventListener('input', updateSignature);
 
 })(window);
