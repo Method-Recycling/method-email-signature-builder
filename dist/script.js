@@ -156,6 +156,11 @@
         link.href = "https://www.methodrecycling.com/internal-onboarding";
         break;
 
+      case "uk-promo":
+        img.src = "https://lh3.googleusercontent.com/d/1rg249m1B_1n58B_Wf70KpuDnLaVCJjjA";
+        link.href = "#";
+        break;
+
       case "default":
         img.src = "https://lh3.googleusercontent.com/d/1t8bcHVKVXtnpCUtWtboFc6LfA4Gqf_Za";
         link.href = "https://www.methodrecycling.com";
