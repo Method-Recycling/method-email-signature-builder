@@ -144,14 +144,14 @@
         noticeBox.style.cssText = "border: 2px solid #d32f2f; background-color: #fff3e0; padding: 8px 10px; border-radius: 5px; margin-top: 10px; max-width: 450px; font-family: Aptos, Helvetica Neue, Arial, sans-serif;";
         
         noticeBox.innerHTML = `
-          <p style="margin: 0 0 5px 0; font-size: 10pt; font-weight: bold; color: #d32f2f; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">Holiday Closure Notice</p>
-          <p style="margin: 0 0 4px 0; font-size: 9pt; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">Our last day for 2025 is <b>23 December</b>, and we'll be back on <b>12 January 2026</b></p>
-          <p style="margin: 0 0 4px 0; font-size: 9pt; font-family: Aptos, Helvetica Neue, Arial, sans-serif;"><b>Please note:</b> Closed for Christmas party on <b>5 December</b></p>
-          <p style="margin: 0 0 3px 0; font-size: 9pt; font-weight: bold; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">Christmas Cut-off Dates:</p>
+          <p style="margin: 0 0 5px 0; font-size: 10pt; font-weight: bold; color: #d32f2f; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">🎄 Holiday Closure Notice 🎅</p>
+          <p style="margin: 0 0 4px 0; font-size: 9pt; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">Our last day for 2025 is <b>23 December</b>, and we'll be back on <b>12 January 2026</b> ✨</p>
+          <p style="margin: 0 0 4px 0; font-size: 9pt; font-family: Aptos, Helvetica Neue, Arial, sans-serif;"><b>Please note:</b> Closed for Christmas party on <b>5 December</b> 🎉</p>
+          <p style="margin: 0 0 3px 0; font-size: 9pt; font-weight: bold; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">🎁 Christmas Cut-off Dates:</p>
           <ul style="margin: 0 0 3px 15px; padding: 0; font-size: 9pt; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">
-            <li style="margin: 1px 0;">Custom signage – <b>5 Dec</b></li>
-            <li style="margin: 1px 0;">Standard orders – <b>15 Dec</b></li>
-            <li style="margin: 1px 0;">Final dispatch – <b>18 Dec</b></li>
+            <li style="margin: 1px 0;">🖊️ Custom signage – <b>5 Dec</b></li>
+            <li style="margin: 1px 0;">📦 Standard orders – <b>15 Dec</b></li>
+            <li style="margin: 1px 0;">🚚 Final dispatch – <b>18 Dec</b></li>
           </ul>
           <p style="margin: 0; font-size: 8pt; font-style: italic; font-family: Aptos, Helvetica Neue, Arial, sans-serif;">Orders placed after 18 Dec will be processed when we return on 12 Jan 2026</p>
         `;
