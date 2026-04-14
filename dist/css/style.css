@@ -631,9 +631,10 @@ textarea.input:disabled {
 }
 
 .field .help {
-  font-size: 0.75rem !important;
+  font-size: 0.7rem !important;
   margin-top: 0.25rem !important;
-  color: #666 !important;
+  margin-left: 4px !important;
+  color: #9aa0a6 !important;
 }
 
 /* Bold / Italic format buttons for Additional Info */
