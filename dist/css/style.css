@@ -2,8 +2,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol" !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
 h1,
@@ -22,8 +22,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
 .heading {
@@ -40,8 +40,8 @@ textarea {
 .field.has-addons .control:first-child:not(:only-child) .button,
 .field.has-addons .control:first-child:not(:only-child) .input,
 .field.has-addons .control:first-child:not(:only-child) .select select {
-  padding-top: 13px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 /* Add these styles for social icons */
@@ -71,18 +71,34 @@ textarea {
   --accent-color: #3273dc;
 }
 
+html,
 body {
-  background-color: #F5F7FA !important; /* This matches the blue-grey shade */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  background-color: #f5f7fa !important;
+  min-height: 100vh;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  display: flex;
+  flex-direction: column;
+}
+
+body > section:last-of-type {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+body > section:last-of-type > .container {
+  width: 100%;
 }
 
 /* Neumorphic Card Styles */
 .neu-card {
   border-radius: 20px;
   background: var(--background);
-  box-shadow: 8px 8px 16px var(--neu-shadow-dark),
-              -8px -8px 16px var(--neu-shadow-light);
+  box-shadow: 8px 8px 16px var(--neu-shadow-dark), -8px -8px 16px var(--neu-shadow-light);
   padding: 25px;
   margin-bottom: 30px;
 }
@@ -90,8 +106,8 @@ body {
 .neu-card-inset {
   border-radius: 15px;
   background: var(--background);
-  box-shadow: inset 5px 5px 10px var(--neu-shadow-dark),
-              inset -5px -5px 10px var(--neu-shadow-light);
+  box-shadow: inset 5px 5px 10px var(--neu-shadow-dark), inset -5px -5px 10px
+    var(--neu-shadow-light);
   padding: 20px;
 }
 
@@ -131,7 +147,7 @@ body {
 .message pre code {
   padding: 0 !important;
   background-color: transparent !important;
-  font-family: 'Fira Code', monospace !important;
+  font-family: "Fira Code", monospace !important;
   max-height: 300px !important;
   overflow-y: auto !important;
 }
@@ -141,21 +157,17 @@ body {
   border: none;
   border-radius: 12px;
   background: var(--background);
-  box-shadow: 5px 5px 10px var(--neu-shadow-dark),
-              -5px -5px 10px var(--neu-shadow-light);
+  box-shadow: 5px 5px 10px var(--neu-shadow-dark), -5px -5px 10px var(--neu-shadow-light);
   transition: all 0.2s ease;
-
 }
 
 .button.is-neu:hover {
-  box-shadow: 3px 3px 6px var(--neu-shadow-dark),
-              -3px -3px 6px var(--neu-shadow-light);
+  box-shadow: 3px 3px 6px var(--neu-shadow-dark), -3px -3px 6px var(--neu-shadow-light);
   transform: translateY(1px);
 }
 
 .button.is-neu:active {
-  box-shadow: inset 2px 2px 5px var(--neu-shadow-dark),
-              inset -2px -2px 5px var(--neu-shadow-light);
+  box-shadow: inset 2px 2px 5px var(--neu-shadow-dark), inset -2px -2px 5px var(--neu-shadow-light);
 }
 
 /* Add these button states */
@@ -225,12 +237,23 @@ body {
 }
 
 /* Stagger card animations */
-.card:nth-child(1) { animation-delay: 0.1s; }
-.card:nth-child(2) { animation-delay: 0.2s; }
-.card:nth-child(3) { animation-delay: 0.3s; }
-.card:nth-child(4) { animation-delay: 0.4s; }
-.card:nth-child(5) { animation-delay: 0.5s; }
-.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.card:nth-child(6) {
+  animation-delay: 0.6s;
 }
 
 /* Input Field Styles */
@@ -239,32 +262,32 @@ select.input,
 textarea.input {
   width: 100% !important;
   max-width: 100% !important;
-  height: 45px !important;
-  padding: 12px !important;
-  border-radius: 12px !important;
-  border: 1.5px solid lightgrey !important;
+  height: 36px !important;
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+  border: 1px solid #e0e3e8 !important;
   outline: none !important;
-  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important;
-  box-shadow: 0px 0px 20px -18px !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  box-shadow: none !important;
   background-color: white !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
 }
 
 /* Placeholder Styles */
 .input::placeholder,
 select.input::placeholder,
 textarea.input::placeholder {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
-  font-size: 12px !important;
-  color: #888 !important;
-  opacity: 0.8 !important;
+  font-family: "Fira Code", "Courier New", Courier, monospace !important;
+  font-size: 11px !important;
+  color: #9aa0a6 !important;
+  opacity: 1 !important;
 }
 
 /* For Firefox */
 .input::-moz-placeholder,
 select.input::-moz-placeholder,
 textarea.input::-moz-placeholder {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-family: "Fira Code", "Courier New", Courier, monospace !important;
   font-size: 12px !important;
   color: #888 !important;
   opacity: 0.8 !important;
@@ -274,7 +297,7 @@ textarea.input::-moz-placeholder {
 .input::-ms-input-placeholder,
 select.input::-ms-input-placeholder,
 textarea.input::-ms-input-placeholder {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-family: "Fira Code", "Courier New", Courier, monospace !important;
   font-size: 12px !important;
   color: #888 !important;
   opacity: 0.8 !important;
@@ -284,7 +307,7 @@ textarea.input::-ms-input-placeholder {
 .input::-webkit-input-placeholder,
 select.input::-webkit-input-placeholder,
 textarea.input::-webkit-input-placeholder {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace !important;
+  font-family: "Fira Code", "Courier New", Courier, monospace !important;
   font-size: 12px !important;
   color: #888 !important;
   opacity: 0.8 !important;
@@ -293,21 +316,14 @@ textarea.input::-webkit-input-placeholder {
 .input:hover,
 select.input:hover,
 textarea.input:hover {
-  border: 2px solid lightgrey !important;
-  box-shadow: 0px 0px 20px -17px !important;
-}
-
-.input:active,
-select.input:active,
-textarea.input:active {
-  transform: scale(0.99) !important;
+  border-color: #c9cdd4 !important;
 }
 
 .input:focus,
 select.input:focus,
 textarea.input:focus {
-  border: 2px solid grey !important;
-  box-shadow: 0px 0px 20px -17px !important;
+  border-color: #2d3436 !important;
+  box-shadow: 0 0 0 3px rgba(45, 52, 54, 0.08) !important;
 }
 
 /* Adjust the select dropdown icon position */
@@ -319,12 +335,13 @@ textarea.input:focus {
 
 /* Adjust icon positioning in input fields with icons */
 .has-icons-left .input {
-  padding-left: 2.5em !important;
+  padding-left: 2.25em !important;
 }
 
 .has-icons-left .icon.is-left {
-  height: 45px !important;
+  height: 36px !important;
   padding: 0 0.5em !important;
+  color: #9aa0a6 !important;
 }
 
 /* Disabled state */
@@ -339,21 +356,65 @@ textarea.input:disabled {
 
 /* Checkbox container adjustments */
 .checkbox {
-  padding: 12px !important;
-  margin-right: 8px !important;
+  padding: 8px !important;
+  margin-right: 6px !important;
 }
 
 /* Field spacing */
 .field:not(:last-child) {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+/* Grouped form sections */
+.form-section + .form-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eef0f3;
+}
+
+.form-section > .columns,
+.form-section > .field {
+  margin-bottom: 0.65rem !important;
+}
+
+.form-section > .columns:last-child,
+.form-section > .field:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Inner nested columns inside rows shouldn't add extra spacing */
+.form-section .columns .column {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+/* Preview pane sections: space between live preview + copy button + code preview */
+.preview-pane .message + .controls,
+.preview-pane .controls + .title {
+  margin-top: 1.25rem !important;
+}
+
+.preview-pane > .title + .message {
+  margin-bottom: 1rem;
 }
 
 /* Label styling */
 .label {
-  color: #363636 !important;
-  font-size: 0.9rem !important;
+  color: #3b3f45 !important;
+  font-size: 0.78rem !important;
   font-weight: 600 !important;
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.3rem !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Addon checkbox buttons — compact */
+.field.has-addons .button {
+  height: 36px !important;
+  min-width: 36px !important;
+  padding: 0 10px !important;
+  border-radius: 8px 0 0 8px !important;
+  border: 1px solid #e0e3e8 !important;
+  background: #fafbfc !important;
 }
 
 /* Control container adjustments */
@@ -477,27 +538,97 @@ textarea.input:disabled {
 }
 
 .method-logo {
-  width: 120px;
+  width: 80px;
   height: auto;
-  object-fit: contain;
+  display: block;
 }
 
 /* Adjust main heading spacing to accommodate logo */
 .heading {
-  padding-top: 40px;
+  padding-top: 10px;
 }
 
 /* Main heading style */
 .heading h1.title {
-  font-size: 2rem !important; /* Reduced from is-size-1 */
-  font-weight: 600 !important;
-  margin-bottom: 1rem !important;
-  color: #363636 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0 !important;
+  color: #1f2937 !important;
+  letter-spacing: -0.01em;
 }
 
 /* Remove any white backgrounds from sections if present */
 .section {
   background-color: transparent;
+  padding: 1.5rem 1.25rem !important;
+}
+
+.section:first-of-type {
+  padding-bottom: 0 !important;
+}
+
+/* Two-column split with a vertical divider between form and preview */
+.form-pane {
+  padding-right: 2rem !important;
+}
+
+.preview-pane {
+  padding-left: 2rem !important;
+  border-left: 1px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .form-pane,
+  .preview-pane {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    border-left: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .preview-pane {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+}
+
+.preview-pane .title {
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280 !important;
+  margin-bottom: 0.75rem !important;
+  font-weight: 600 !important;
+}
+
+.preview-pane .message {
+  border: 1px solid #eceff3 !important;
+  border-radius: 10px !important;
+  background: #fafbfc !important;
+}
+
+.preview-pane .message-body {
+  padding: 1rem !important;
+  background: transparent !important;
+}
+
+.preview-pane .controls {
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem !important;
+}
+
+/* Form column title matches the Live Preview heading style */
+.column > .title:not(.preview-pane .title) {
+  font-size: 0.85rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: #6b7280 !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
 }
 
 .field.mt-2 {
@@ -508,4 +639,49 @@ textarea.input:disabled {
   font-size: 0.75rem !important;
   margin-top: 0.25rem !important;
   color: #666 !important;
+}
+
+/* Bold / Italic format buttons for Additional Info */
+.format-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.format-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #e0e3e8;
+  background: #fafbfc;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  color: #3b3f45;
+  transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.format-btn:hover:not(:disabled) {
+  background: #eef0f3;
+  border-color: #c9cdd4;
+}
+
+.format-btn:active:not(:disabled) {
+  background: #e3e6ea;
+}
+
+.format-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.format-hint {
+  font-size: 0.7rem;
+  color: #9aa0a6;
+  margin-left: 4px;
 }
