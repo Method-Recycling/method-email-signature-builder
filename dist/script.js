@@ -330,10 +330,84 @@
     });
   }
 
+  var STORAGE_KEY = "methodSignature:v1";
+  var TEXT_FIELDS = [
+    "name",
+    "pronouns",
+    "jobtitle",
+    "department",
+    "phone",
+    "phone2",
+    "email",
+    "meetingUrl",
+    "additional",
+    "image",
+  ];
+  var CHECKBOX_FIELDS = [
+    "checkPronouns",
+    "check2ndJob",
+    "checkPhone",
+    "checkPhone2",
+    "checkTeams",
+    "checkAdditional",
+  ];
+
+  function saveState() {
+    try {
+      var state = {};
+      TEXT_FIELDS.forEach((id) => {
+        var el = doc.getElementById(id);
+        if (el) state[id] = el.value;
+      });
+      CHECKBOX_FIELDS.forEach((id) => {
+        var el = doc.getElementById(id);
+        if (el) state[id] = el.checked;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (err) {
+      // Ignore quota/disabled-storage errors.
+    }
+  }
+
+  function restoreState() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var state = JSON.parse(raw);
+
+      CHECKBOX_FIELDS.forEach((id) => {
+        var el = doc.getElementById(id);
+        if (el && typeof state[id] === "boolean") {
+          el.checked = state[id];
+          el.dispatchEvent(new Event("click", { bubbles: true }));
+          el.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+
+      TEXT_FIELDS.forEach((id) => {
+        var el = doc.getElementById(id);
+        if (el && typeof state[id] === "string") {
+          el.value = state[id];
+          el.dispatchEvent(new Event("keyup", { bubbles: true }));
+          el.dispatchEvent(new Event("input", { bubbles: true }));
+          el.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      });
+    } catch (err) {
+      // Ignore corrupt state.
+    }
+  }
+
+  doc.querySelectorAll("#form input, #form select").forEach((el) => {
+    el.addEventListener("input", saveState);
+    el.addEventListener("change", saveState);
+  });
+
   doc.addEventListener("DOMContentLoaded", () => {
     if (checkTeams && !checkTeams.checked) {
       teamsWrap.innerHTML = "";
     }
+    restoreState();
     addContactSplits();
     bannerInput.dispatchEvent(new Event("change"));
     updateCodePreview();
