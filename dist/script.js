@@ -232,6 +232,14 @@
         if (!element) return;
         element.innerHTML = allowBoldItalic(value);
         break;
+      case "phone":
+      case "phone2": {
+        if (!element) return;
+        element.textContent = value;
+        var parentLink = element.closest("a");
+        if (parentLink) parentLink.href = value ? `tel:${value.replace(/[^\d+]/g, "")}` : "";
+        break;
+      }
       default:
         if (!element) return;
         element.textContent = value;

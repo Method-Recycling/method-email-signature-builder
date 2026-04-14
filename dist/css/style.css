@@ -55,11 +55,6 @@ textarea {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  transition: transform 0.2s ease-in-out;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
 }
 
 /* Neumorphic Base Styles */
