@@ -171,6 +171,25 @@
       return;
     }
 
+    if (bannerInput.value === "christmas-2026") {
+      var font = "font-family: Aptos, Helvetica Neue, Arial, sans-serif;";
+      var notice = doc.createElement("div");
+      notice.style.cssText = `border: 2px solid #d32f2f; background-color: #fff3e0; padding: 8px 10px; border-radius: 5px; max-width: 450px; ${font}`;
+      notice.innerHTML = `
+        <p style="margin: 0 0 5px 0; font-size: 10pt; font-weight: bold; color: #d32f2f; ${font}">🎄🎅 Christmas Order &amp; Delivery Cut-Off Dates 🎁🎄</p>
+        <p style="margin: 0 0 4px 0; font-size: 9pt; ${font}">With the Christmas break approaching, please see our order cut-off dates below for delivery before Christmas:</p>
+        <ul style="margin: 0 0 4px 15px; padding: 0; font-size: 9pt; ${font}">
+          <li style="margin: 1px 0;">🎁 Standard orders – <b>16 December</b></li>
+          <li style="margin: 1px 0;">🚚 Large orders – <b>11 December</b></li>
+          <li style="margin: 1px 0;">🎨 Custom signage – <b>9 December</b> (2 December for larger orders)</li>
+        </ul>
+        <p style="margin: 0; font-size: 8pt; font-style: italic; ${font}">Orders placed after these cut-offs are expected to be delivered from the week commencing 11 January, subject to availability.</p>
+      `;
+      bannerWrap.appendChild(notice);
+      bannerWrap.style.setProperty("margin-top", "10px", "important");
+      return;
+    }
+
     var match = bannerInput.value.match(/^banner-(\d{2})$/);
     if (!match) return;
 
